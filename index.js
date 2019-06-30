@@ -324,7 +324,7 @@ class RNParallax extends Component {
     const { scrollY } = this.state;
     return (
       <Animated.ScrollView
-        style={[styles.scrollView, scrollViewStyle]}
+        style={[styles.scrollView, scrollViewStyle, { marginTop: this.getHeaderHeight() }]}
         contentContainerStyle={contentContainerStyle}
         scrollEventThrottle={scrollEventThrottle}
         onScroll={Animated.event(
@@ -332,7 +332,6 @@ class RNParallax extends Component {
         )}
         {...scrollViewProps}
       >
-        <View style={{ height: this.getHeaderMaxHeight() }} />
         {renderContent({ scrollY })}
       </Animated.ScrollView>
     );
