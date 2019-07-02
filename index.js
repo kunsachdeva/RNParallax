@@ -333,6 +333,7 @@ class RNParallax extends Component {
         {...scrollViewProps}
       >
         {renderContent({ scrollY })}
+        <View style={{ height: this.props.extraBottomScroll || 0 }} />
       </Animated.ScrollView>
     );
   }
